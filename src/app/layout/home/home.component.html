@@ -1,0 +1,19 @@
+<section id="home">
+  <header id="header">
+    <h1>Weather App</h1>
+    <div>
+      <label for="citySelect">Choose a city:</label>
+      <select id="citySelect" (change)="onCityChange($event)" class="selectCity">
+        @for (city of cities ; track city.value) {
+          <option [value]="city.value">{{ city.name }}</option>
+        }
+      </select>
+    </div>
+    
+  </header>
+  <div class="chart">
+    <app-weather-chart [weatherData]="weatherData"></app-weather-chart>
+
+  </div>
+
+</section>
